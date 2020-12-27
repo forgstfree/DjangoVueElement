@@ -1,0 +1,13 @@
+2020-01-07T11:06:17.593563Z	    3 Query	SELECT name,value FROM mdl_cache_flags WHERE flagtype = 'accesslib/dirtycontexts' AND expiry >= '1578395177' AND timemodified > '1578395175'
+2020-01-07T11:06:17.596929Z	    3 Query	SELECT value FROM mdl_cache_flags WHERE flagtype = 'accesslib/dirtyusers' AND name = '0' AND expiry >= '1578395177' AND timemodified > '1578395175'
+2020-01-07T11:06:17.606323Z	    3 Query	SELECT ctx.id AS ctxid, ctx.path AS ctxpath, ctx.depth AS ctxdepth, ctx.contextlevel AS ctxlevel, ctx.instanceid AS ctxinstance, ctx.locked AS ctxlocked FROM mdl_context ctx
+                    WHERE ctx.contextlevel = '40' AND ctx.instanceid = '1'
+2020-01-07T11:06:17.607119Z	    3 Query	SELECT cc.id,cc.name,cc.idnumber,cc.parent,cc.sortorder,cc.coursecount,cc.visible,cc.depth,cc.path, ctx.id AS ctxid, ctx.path AS ctxpath, ctx.depth AS ctxdepth, ctx.contextlevel AS ctxlevel, ctx.instanceid AS ctxinstance, ctx.locked AS ctxlocked
+                FROM mdl_course_categories cc
+                JOIN mdl_context ctx ON cc.id = ctx.instanceid AND ctx.contextlevel = '40'
+                WHERE cc.id = '1' ORDER BY cc.sortorder
+2020-01-07T11:06:17.622699Z	    3 Query	SELECT id,name,value FROM mdl_course_format_options WHERE courseid = '1' AND format = 'site' AND sectionid = '0'
+2020-01-07T11:06:17.628922Z	    3 Query	SELECT ctx.*
+                  FROM mdl_context ctx
+                 WHERE ctx.path LIKE '/1/2/%'
+2020-01-07T11:06:17.674998Z	    3 Query	SELECT * FROM mdl_enrol WHERE courseid = '1' AND status = '0'  ORDER BY sortorder,id

@@ -1,0 +1,89 @@
+2019-10-12T16:56:19.100712+08:00	   10 Query	SELECT id, sid, state, userid, lastip, timecreated, timemodified FROM mdl_sessions WHERE sid = 'g9m4i5qfqdrj9hplh78t767aas'
+2019-10-12T16:56:19.132606+08:00	   10 Query	SELECT f.filter, fc.name, fc.value
+              FROM mdl_filter_active f
+         LEFT JOIN mdl_filter_config fc
+                ON fc.filter = f.filter
+               AND fc.contextid = f.contextid
+             WHERE f.contextid = '1'
+               AND f.active != '-9999'
+          ORDER BY f.sortorder
+2019-10-12T16:56:19.161411+08:00	   10 Query	SELECT * FROM mdl_context WHERE contextlevel = '50' AND instanceid = '1'
+2019-10-12T16:56:19.463129+08:00	   10 Query	SELECT * FROM mdl_capabilities
+2019-10-12T16:56:19.484906+08:00	   10 Query	SELECT name,value FROM mdl_cache_flags WHERE flagtype = 'accesslib/dirtycontexts' AND expiry >= '1570870579' AND timemodified > '1570861322'
+2019-10-12T16:56:19.486058+08:00	   10 Query	SELECT value FROM mdl_cache_flags WHERE flagtype = 'accesslib/dirtyusers' AND name = '0' AND expiry >= '1570870579' AND timemodified > '1570861322'
+2019-10-12T16:56:19.553017+08:00	   10 Quit	
+2019-10-12T16:56:20.446520+08:00	   11 Connect	moodle@localhost on moodle using Socket
+2019-10-12T16:56:20.446784+08:00	   11 Query	SET NAMES utf8mb4
+2019-10-12T16:56:20.446925+08:00	   11 Query	SET SESSION sql_mode = 'STRICT_ALL_TABLES'
+2019-10-12T16:56:20.447284+08:00	   11 Query	SELECT value FROM mdl_config WHERE name = 'siteidentifier'
+2019-10-12T16:56:20.457579+08:00	   11 Query	SELECT * FROM mdl_context WHERE contextlevel = '10'
+2019-10-12T16:56:20.458375+08:00	   11 Query	SELECT * FROM mdl_course WHERE category = '0'
+2019-10-12T16:56:20.464725+08:00	   11 Query	SELECT id, sid, state, userid, lastip, timecreated, timemodified FROM mdl_sessions WHERE sid = 'g9m4i5qfqdrj9hplh78t767aas'
+2019-10-12T16:56:20.477511+08:00	   11 Query	SELECT * FROM mdl_external_functions WHERE name = 'core_fetch_notifications'
+2019-10-12T16:56:20.492895+08:00	   11 Quit	
+2019-10-12T16:56:26.330913+08:00	   12 Connect	moodle@localhost on moodle using Socket
+2019-10-12T16:56:26.331322+08:00	   12 Query	SET NAMES utf8mb4
+2019-10-12T16:56:26.331649+08:00	   12 Query	SET SESSION sql_mode = 'STRICT_ALL_TABLES'
+2019-10-12T16:56:26.332141+08:00	   12 Query	SELECT value FROM mdl_config WHERE name = 'siteidentifier'
+2019-10-12T16:56:26.345664+08:00	   12 Query	SELECT * FROM mdl_context WHERE contextlevel = '10'
+2019-10-12T16:56:26.347726+08:00	   12 Query	SELECT * FROM mdl_course WHERE category = '0'
+2019-10-12T16:56:26.356656+08:00	   12 Query	SELECT id, sid, state, userid, lastip, timecreated, timemodified FROM mdl_sessions WHERE sid = 'g9m4i5qfqdrj9hplh78t767aas'
+2019-10-12T16:56:26.375439+08:00	   12 Query	SELECT * FROM mdl_user WHERE username = '4019110004' AND deleted <> 1 AND mnethostid = '1'
+2019-10-12T16:56:26.384504+08:00	   12 Query	SELECT name,value FROM mdl_user_preferences WHERE userid = '3326'
+2019-10-12T16:56:26.389040+08:00	   12 Query	SELECT * FROM mdl_user_lastaccess WHERE userid = '3326'
+2019-10-12T16:56:26.393789+08:00	   12 Query	SELECT g.id, g.courseid
+              FROM mdl_groups g, mdl_groups_members gm
+             WHERE gm.groupid=g.id AND gm.userid='3326'
+2019-10-12T16:56:26.405703+08:00	   12 Query	SELECT uif.*, uic.name AS categoryname , uind.id AS hasuserdata, uind.data, uind.dataformat FROM mdl_user_info_field uif LEFT JOIN mdl_user_info_category uic ON uif.categoryid = uic.id LEFT JOIN mdl_user_info_data uind ON uif.id = uind.fieldid AND uind.userid = '3326' ORDER BY uic.sortorder ASC, uif.sortorder ASC
+2019-10-12T16:56:26.415581+08:00	   12 Query	SELECT * FROM mdl_user WHERE username = '4019110004' AND mnethostid = '1'
+2019-10-12T16:56:26.479592+08:00	   12 Query	SELECT * FROM mdl_user_preferences WHERE userid = '3326' AND name = 'login_failed_count_since_success'
+2019-10-12T16:56:26.480919+08:00	   12 Query	SELECT column_name, data_type, character_maximum_length, numeric_precision,
+                       numeric_scale, is_nullable, column_type, column_default, column_key, extra
+                  FROM information_schema.columns
+                 WHERE table_name = 'mdl_user_preferences'
+                       AND table_schema = 'moodle'
+              ORDER BY ordinal_position
+2019-10-12T16:56:26.482963+08:00	   12 Query	UPDATE mdl_user_preferences SET value = '2' WHERE id = '11102'
+2019-10-12T16:56:26.486061+08:00	   12 Query	SELECT * FROM mdl_cache_flags WHERE name = '3326' AND flagtype = 'userpreferenceschanged' LIMIT 0, 1
+2019-10-12T16:56:26.487824+08:00	   12 Query	UPDATE mdl_cache_flags SET flagtype = 'userpreferenceschanged',name = '3326',timemodified = '1570870586',value = '1',expiry = '1570877786' WHERE id='1'
+2019-10-12T16:56:26.490106+08:00	   12 Query	DELETE FROM mdl_user_preferences WHERE userid = '3326' AND name = 'login_lockout'
+2019-10-12T16:56:26.493008+08:00	   12 Query	SELECT * FROM mdl_cache_flags WHERE name = '3326' AND flagtype = 'userpreferenceschanged' LIMIT 0, 1
+2019-10-12T16:56:26.493451+08:00	   12 Query	DELETE FROM mdl_user_preferences WHERE userid = '3326' AND name = 'login_failed_count'
+2019-10-12T16:56:26.494854+08:00	   12 Query	SELECT * FROM mdl_cache_flags WHERE name = '3326' AND flagtype = 'userpreferenceschanged' LIMIT 0, 1
+2019-10-12T16:56:26.495361+08:00	   12 Query	DELETE FROM mdl_user_preferences WHERE userid = '3326' AND name = 'login_failed_last'
+2019-10-12T16:56:26.496628+08:00	   12 Query	SELECT * FROM mdl_cache_flags WHERE name = '3326' AND flagtype = 'userpreferenceschanged' LIMIT 0, 1
+2019-10-12T16:56:26.515526+08:00	   12 Query	SELECT 'x' FROM mdl_user WHERE username = '4019110004' AND mnethostid = '1' AND password = 'restored' LIMIT 0, 1
+2019-10-12T16:56:26.521036+08:00	   12 Query	SHOW VARIABLES LIKE 'max_allowed_packet'
+2019-10-12T16:56:26.526800+08:00	   12 Query	INSERT INTO mdl_logstore_standard_log (eventname,component,action,target,objecttable,objectid,crud,edulevel,contextid,contextlevel,contextinstanceid,userid,courseid,relateduserid,anonymous,other,timecreated,origin,ip,realuserid) VALUES ('\\core\\event\\user_login_failed','core','failed','user_login',NULL,NULL,'r','0','1','10','0','3326','0',NULL,'0','a:2:{s:8:\"username\";s:10:\"4019110004\";s:6:\"reason\";i:3;}','1570870586','web','127.0.0.1',NULL)
+2019-10-12T16:56:26.531769+08:00	   12 Quit	
+2019-10-12T16:56:26.829956+08:00	   13 Connect	moodle@localhost on moodle using Socket
+2019-10-12T16:56:26.830504+08:00	   13 Query	SET NAMES utf8mb4
+2019-10-12T16:56:26.830728+08:00	   13 Query	SET SESSION sql_mode = 'STRICT_ALL_TABLES'
+2019-10-12T16:56:26.832053+08:00	   13 Query	SELECT value FROM mdl_config WHERE name = 'siteidentifier'
+2019-10-12T16:56:26.844123+08:00	   13 Query	SELECT * FROM mdl_context WHERE contextlevel = '10'
+2019-10-12T16:56:26.846547+08:00	   13 Query	SELECT * FROM mdl_course WHERE category = '0'
+2019-10-12T16:56:26.858741+08:00	   13 Query	SELECT id, sid, state, userid, lastip, timecreated, timemodified FROM mdl_sessions WHERE sid = 'g9m4i5qfqdrj9hplh78t767aas'
+2019-10-12T16:56:26.883458+08:00	   13 Query	SELECT f.filter, fc.name, fc.value
+              FROM mdl_filter_active f
+         LEFT JOIN mdl_filter_config fc
+                ON fc.filter = f.filter
+               AND fc.contextid = f.contextid
+             WHERE f.contextid = '1'
+               AND f.active != '-9999'
+          ORDER BY f.sortorder
+2019-10-12T16:56:26.911553+08:00	   13 Query	SELECT * FROM mdl_context WHERE contextlevel = '50' AND instanceid = '1'
+2019-10-12T16:56:27.228674+08:00	   13 Query	SELECT name,value FROM mdl_cache_flags WHERE flagtype = 'accesslib/dirtycontexts' AND expiry >= '1570870587' AND timemodified > '1570861322'
+2019-10-12T16:56:27.229296+08:00	   13 Query	SELECT value FROM mdl_cache_flags WHERE flagtype = 'accesslib/dirtyusers' AND name = '0' AND expiry >= '1570870587' AND timemodified > '1570861322'
+2019-10-12T16:56:27.277259+08:00	   13 Quit	
+2019-10-12T16:56:28.360695+08:00	   14 Connect	moodle@localhost on moodle using Socket
+2019-10-12T16:56:28.360955+08:00	   14 Query	SET NAMES utf8mb4
+2019-10-12T16:56:28.361301+08:00	   14 Query	SET SESSION sql_mode = 'STRICT_ALL_TABLES'
+2019-10-12T16:56:28.361825+08:00	   14 Query	SELECT value FROM mdl_config WHERE name = 'siteidentifier'
+2019-10-12T16:56:28.376749+08:00	   14 Query	SELECT * FROM mdl_context WHERE contextlevel = '10'
+2019-10-12T16:56:28.377551+08:00	   14 Query	SELECT * FROM mdl_course WHERE category = '0'
+2019-10-12T16:56:28.385630+08:00	   14 Query	SELECT id, sid, state, userid, lastip, timecreated, timemodified FROM mdl_sessions WHERE sid = 'g9m4i5qfqdrj9hplh78t767aas'
+2019-10-12T16:56:28.401871+08:00	   14 Query	SELECT * FROM mdl_external_functions WHERE name = 'core_fetch_notifications'
+2019-10-12T16:56:28.423938+08:00	   14 Quit	
+2019-10-12T17:00:47.746133+08:00	   15 Connect	root@localhost on  using Socket
+2019-10-12T17:00:47.746373+08:00	   15 Query	select @@version_comment limit 1
+2019-10-12T17:06:34.776508+08:00	   15 Query	set global general_log = 'OFF'
